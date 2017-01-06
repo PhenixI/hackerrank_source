@@ -1,0 +1,10 @@
+﻿  cracking_the_coding_interview.cpp
+f:\hackerrank\hackerrank_source\tutorials_cracking_the_coding_interview\cracking_the_coding_interview.cpp(37): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          d:\program files\vc\include\stdio.h(283) : 参见“scanf”的声明
+f:\hackerrank\hackerrank_source\tutorials_cracking_the_coding_interview\cracking_the_coding_interview.cpp(40): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          d:\program files\vc\include\stdio.h(283) : 参见“scanf”的声明
+f:\hackerrank\hackerrank_source\tutorials_cracking_the_coding_interview\cracking_the_coding_interview.cpp(77): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          d:\program files\vc\include\stdio.h(283) : 参见“scanf”的声明
+f:\hackerrank\hackerrank_source\tutorials_cracking_the_coding_interview\cracking_the_coding_interview.cpp(80): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          d:\program files\vc\include\stdio.h(283) : 参见“scanf”的声明
+  tutorials_cracking_the_coding_interview.vcxproj -> F:\hackerrank\hackerrank_source\Debug\tutorials_cracking_the_coding_interview.exe
