@@ -1,0 +1,4 @@
+﻿  time_conversion.cpp
+f:\hackerrank\hackerrank_source\hackerrank_source\time_conversion.cpp(35): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          d:\program files\vc\include\stdio.h(283) : 参见“scanf”的声明
+  hackerrank_source.vcxproj -> F:\hackerrank\hackerrank_source\Debug\hackerrank_source.exe
