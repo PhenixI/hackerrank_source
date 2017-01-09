@@ -109,3 +109,73 @@ bool check(Node* root, int minValue, int maxValue)
 bool checkBST(Node* root) {
 	return check(root, INT_MIN, INT_MAX);
 }
+
+
+//Hash Tables: Ransom Note
+//Given the words in the magazine and the words in the ransom note, print Yes if he can replicate his ransom note exactly using whole words from the magazine; otherwise, print No.
+
+#include <map>
+#include <set>
+#include <list>
+#include <cmath>
+#include <ctime>
+#include <deque>
+#include <queue>
+#include <stack>
+#include <string>
+#include <bitset>
+#include <cstdio>
+#include <limits>
+#include <vector>
+#include <climits>
+#include <cstring>
+#include <cstdlib>
+#include <fstream>
+#include <numeric>
+#include <sstream>
+#include <iostream>
+#include <algorithm>
+#include <unordered_map>
+
+using namespace std;
+
+bool ransom_note(vector<string> magazine, vector<string> ransom) {
+	unordered_map<string, int> hashed_magazine;
+	for (auto & it : magazine)
+		hashed_magazine[it]++;
+	for (auto& it : ransom)
+	{
+		if (hashed_magazine[it] > 0)
+			hashed_magazine[it]--;
+		else
+			return false;
+	}
+	return true;
+}
+
+int main_hashtable(){
+	int m;
+	int n;
+	cin >> m >> n;
+	vector<string> magazine(m);
+	for (int magazine_i = 0; magazine_i < m; magazine_i++){
+		cin >> magazine[magazine_i];
+	}
+	vector<string> ransom(n);
+	for (int ransom_i = 0; ransom_i < n; ransom_i++){
+		cin >> ransom[ransom_i];
+	}
+	if (ransom_note(magazine, ransom))
+		cout << "Yes\n";
+	else
+		cout << "No\n";
+	return 0;
+}
+
+//Tries:Contacts
+//We're going to make our own Contacts application! The application must perform two types of operations:
+
+//1.add name, where is a string denoting a contact name.This must store as a new contact in the application.
+//2.find partial, where is a string denoting a partial name to search the application for.It must count the number of contacts starting with and print the count on a new line.
+
+//Given sequential add and find operations, perform each operation in order.
