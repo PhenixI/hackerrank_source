@@ -272,12 +272,47 @@ it means the difference of the length of each data structure should be less than
 And the min data structure should store the highest half of the sorted list and the max structure needs to store the lowest of the sorted list.
 In this way the insersion will take place in O(logn) and finding the median in O(1) as access time to top element of heap or priority queue is O(1).*/
 
+#include <functional>
+priority_queue<int, vector<int>, less<int>> lower = priority_queue<int, vector<int>, less<int>>();
+priority_queue<int, vector<int>, greater<int>> higher = priority_queue<int, vector<int>, greater<int>>();
+
+void add(int i){
+	if (lower.empty())
+		lower.push(i);
+	else{
+		if (lower.size() > higher.size()){
+			if (lower.top() > i){
+				higher.push(lower.top());
+				lower.pop();
+				lower.push(i);
+			}
+			else
+				higher.push(i);
+		}
+		else{
+			if (higher.top() >= i)
+				lower.push(i);
+			else {
+				lower.push(higher.top());
+				higher.pop();
+				higher.push(i);
+			}
+		}
+	}
+}
+
+double find(){
+	int n = lower.size() + higher.size();
+	return (n % 2 == 0) ? (higher.top() + lower.top()) / 2.0 : (double)(lower.top());
+}
 int main(){
 	int n;
 	cin >> n;
 	vector<int> a(n);
 	for (int a_i = 0; a_i < n; a_i++){
 		cin >> a[a_i];
+		add(a[a_i]);
+		printf("%.1f\n", find());// << endl;
 	}
 	return 0;
 }
