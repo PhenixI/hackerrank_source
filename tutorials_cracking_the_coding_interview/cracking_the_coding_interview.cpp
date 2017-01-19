@@ -205,13 +205,79 @@ int main_hashtable(){
 using namespace std;
 
 
-int main(){
+int main_Tries(){
 	int n;
 	cin >> n;
 	for (int a0 = 0; a0 < n; a0++){
 		string op;
 		string contact;
 		cin >> op >> contact;
+	}
+	return 0;
+}
+
+//Linked Lists: Detect a Cycle
+//A linked list is said to contain a cycle if any node is visited more than once while traversing the list.
+//bool has_cycle(Node* head) {
+//	if (head == NULL)return false;
+//
+//	Node *slow = head;
+//	Node *fast = head->next;
+//	while (slow != fast){
+//		if (fast == NULL || fast->next == NULL)return false;
+//
+//		slow = slow->next;
+//		fast = fast->next->next;
+//	}
+//	return true;
+//}
+
+//Stacks: Balanced Brackets
+//Given strings of brackets, determine whether each sequence of brackets is balanced. If a string is balanced, print YES on a new line; otherwise, print NO on a new line.
+
+bool is_balanced(string expression) {
+	stack<char> s;
+	for (char c : expression) {
+		if (c == '{') s.push('}');
+		else if (c == '[') s.push(']');
+		else if (c == '(') s.push(')');
+		else {
+			if (s.empty() || c != s.top())
+				return false;
+			s.pop();
+		}
+	}
+	return s.empty();
+}
+
+int main_stacks(){
+	int t;
+	cin >> t;
+	for (int a0 = 0; a0 < t; a0++){
+		string expression;
+		cin >> expression;
+		bool answer = is_balanced(expression);
+		if (answer)
+			cout << "YES\n";
+		else cout << "NO\n";
+	}
+	return 0;
+}
+
+//Heaps Find the Running Median
+/*To prevent timeout the algorithm needs to be run in O(logn).
+The solution is using two heaps or two priority queues, 
+one max the other min, and always balanced.By balanced, 
+it means the difference of the length of each data structure should be less than or equal to 1. 
+And the min data structure should store the highest half of the sorted list and the max structure needs to store the lowest of the sorted list.
+In this way the insersion will take place in O(logn) and finding the median in O(1) as access time to top element of heap or priority queue is O(1).*/
+
+int main(){
+	int n;
+	cin >> n;
+	vector<int> a(n);
+	for (int a_i = 0; a_i < n; a_i++){
+		cin >> a[a_i];
 	}
 	return 0;
 }
